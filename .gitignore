@@ -1,0 +1,25 @@
+# Ignorar ambientes virtuais
+venv/
+env/
+.venv/
+
+# Ignorar arquivos de compilação e cache do Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignorar arquivos de configuração do IDE (Exemplo: Visual Studio Code)
+.vscode/
+
+# Ignorar arquivos de configuração do PyCharm
+.idea/
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos do banco de dados SQLite
+*.db
+*.sqlite3
+
+# Ignorar arquivos de dependências (Exemplo: Flask)
+instance/

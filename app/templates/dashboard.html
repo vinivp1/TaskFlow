@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Bem-vindo, {{ user.username }}!</h2>
+    <p>Você está logado com sucesso.</p>
+    
+    <a href="{{ url_for('main.new_task') }}" class="btn btn-primary m-2">Nova Tarefa</a>
+    
+    <h3 class="mt-5">Minhas Tarefas:</h3>
+    <ul class="list-group">
+        {% for task in tasks %}
+        <li class="list-group-item">
+            <h5>{{ task.title }}</h5>
+            <p>{{ task.description }}</p>
+            <p><strong>Status:</strong> {% if task.completed %} Concluída {% else %} Em andamento {% endif %}</p>
+            <a href="{{ url_for('main.edit_task', task_id=task.id) }}" class="btn btn-warning m-2">Editar</a>
+            <a href="{{ url_for('main.delete_task', task_id=task.id) }}" class="btn btn-danger m-2">Excluir</a>
+        </li>
+        {% else %}
+        <li class="list-group-item">Você ainda não tem tarefas.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

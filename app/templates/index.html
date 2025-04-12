@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1 class="mb-4">Bem-vindo ao TaskFlow!</h1>
+
+    {% if current_user.is_authenticated %}
+        <p>Você está logado como <strong>{{ current_user.username }}</strong>.</p>
+        <a href="{{ url_for('main.dashboard') }}" class="btn btn-primary m-2">Ir para Dashboard</a>
+        <a href="{{ url_for('main.logout') }}" class="btn btn-danger m-2">Sair</a>
+    {% else %}
+        <p>Gerencie suas tarefas de forma simples e organizada.</p>
+        <a href="{{ url_for('main.login') }}" class="btn btn-success m-2">Entrar</a>
+        <a href="{{ url_for('main.register') }}" class="btn btn-outline-primary m-2">Cadastrar-se</a>
+    {% endif %}
+</div>
+{% endblock %}
