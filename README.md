@@ -21,10 +21,10 @@ Este projeto é ideal para aprender sobre a criação de APIs com Flask, autenti
    pip install -r requirements.txt
 3. Configure o banco de dados (criar tabelas):
    ```bash
-python
-from app import db
-db.create_all()
-exit()
+   python
+   from app import db
+   db.create_all()
+   exit()
 4. Inicie o servidor Flask:
     ```bash
-flask run
+   flask run
